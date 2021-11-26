@@ -2,13 +2,15 @@
 #include <stdlib.h>
 char* StrCpy(char* src)
 {
-int len=strlen(src);
+int len=0;
+for (char* p=src;*p!=NULL;p++)
+len++;
 char* dest;
-dest=(char*)malloc(len+1);
+dest=(char*)malloc(sizeof(char)*(len+1));
 if(dest==NULL)
 exit(1);
 for (int i=0;i<len;i++)
 dest[i]=src[i];
-dest[i]='\0';
+dest[len]='\0';
 return dest;
 }
