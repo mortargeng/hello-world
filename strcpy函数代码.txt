@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+char* StrCpy(char* src)
+{
+int len=strlen(src);
+char* dest;
+dest=(char*)malloc(len+1);
+if(dest==NULL)
+exit(1);
+for (int i=0;i<len;i++)
+dest[i]=src[i];
+dest[i]='\0';
+return dest;
+}
